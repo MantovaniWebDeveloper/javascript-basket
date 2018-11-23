@@ -10,28 +10,20 @@ var arrayNumeri = [0,1,2,3,4,5,6,7,8,9,10];
 
 
 function generaCodice(arrayNumeri,arrayLettere){
+
   var codiceToString = "";
   var arrayCodice = [];
   var arrayLettereLunghezza = arrayLettere.length - 1;
   var arrayNumeriLunghezza = arrayNumeri.length - 1;
-
-
-  var mischiaArray1 = (Math.floor((Math.random()*arrayLettereLunghezza)+1))
-  var mischiaArray2 = (Math.floor((Math.random()*arrayLettereLunghezza)+1))
-  var mischiaArray3 = (Math.floor((Math.random()*arrayLettereLunghezza)+1))
-  var mischiaArrayNum1 = (Math.floor((Math.random()*arrayNumeriLunghezza)+1))
-  var mischiaArrayNum2 = (Math.floor((Math.random()*arrayNumeriLunghezza)+1))
-  var mischiaArrayNum3 = (Math.floor((Math.random()*arrayNumeriLunghezza)+1))
-
-
-  arrayCodice.push(arrayLettere[mischiaArray1]);
-  arrayCodice.push(arrayLettere[mischiaArray2]);
-  arrayCodice.push(arrayLettere[mischiaArray3]);
-  arrayCodice.push(arrayNumeri[mischiaArrayNum1]);
-  arrayCodice.push(arrayNumeri[mischiaArrayNum2]);
-  arrayCodice.push(arrayNumeri[mischiaArrayNum3]);
-
-  codiceToString = arrayCodice.toString().toUpperCase();
+  for (var i = 0; i < 3; i++) {
+    var mischiaArray = (Math.floor((Math.random()*arrayLettereLunghezza)+1));
+    arrayCodice.push(arrayLettere[mischiaArray])
+  }
+  for (var i = 0; i < 3; i++) {
+    var mischiaArrayNum = (Math.floor((Math.random()*arrayNumeriLunghezza)+1));
+    arrayCodice.push(arrayNumeri[mischiaArrayNum]);
+  }
+  codiceToString = arrayCodice.toString().toUpperCase().replace(/,/gi,"");
 
   return codiceToString;
 }
