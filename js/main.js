@@ -6,21 +6,22 @@ function numeroRandom(numeroMin, numeroMax){
 
 //funzion generatore Codice
 var arrayLettere = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","u","v","w","x","y"];
-var arrayNumeri = [0,1,2,3,4,5,6,7,8,9];
+var arrayNumeri = [0,1,2,3,4,5,6,7,8,9,10];
 
 
 function generaCodice(arrayNumeri,arrayLettere){
+  var codiceToString = "";
   var arrayCodice = [];
   var arrayLettereLunghezza = arrayLettere.length - 1;
   var arrayNumeriLunghezza = arrayNumeri.length - 1;
 
 
-  var mischiaArray1 = (Math.round((Math.random()*arrayLettereLunghezza)+1))
-  var mischiaArray2 = (Math.round((Math.random()*arrayLettereLunghezza)+1))
-  var mischiaArray3 = (Math.round((Math.random()*arrayLettereLunghezza)+1))
-  var mischiaArrayNum1 = (Math.round((Math.random()*arrayNumeriLunghezza)+1))
-  var mischiaArrayNum2 = (Math.round((Math.random()*arrayNumeriLunghezza)+1))
-  var mischiaArrayNum3 = (Math.round((Math.random()*arrayNumeriLunghezza)+1))
+  var mischiaArray1 = (Math.floor((Math.random()*arrayLettereLunghezza)+1))
+  var mischiaArray2 = (Math.floor((Math.random()*arrayLettereLunghezza)+1))
+  var mischiaArray3 = (Math.floor((Math.random()*arrayLettereLunghezza)+1))
+  var mischiaArrayNum1 = (Math.floor((Math.random()*arrayNumeriLunghezza)+1))
+  var mischiaArrayNum2 = (Math.floor((Math.random()*arrayNumeriLunghezza)+1))
+  var mischiaArrayNum3 = (Math.floor((Math.random()*arrayNumeriLunghezza)+1))
 
 
   arrayCodice.push(arrayLettere[mischiaArray1]);
@@ -30,12 +31,13 @@ function generaCodice(arrayNumeri,arrayLettere){
   arrayCodice.push(arrayNumeri[mischiaArrayNum2]);
   arrayCodice.push(arrayNumeri[mischiaArrayNum3]);
 
-  return arrayCodice;
+  codiceToString = arrayCodice.toString().toUpperCase();
+
+  return codiceToString;
 }
 
 var codice = generaCodice(arrayNumeri,arrayLettere);
-var codiceStringa = codice.toString();
-console.log(codiceStringa);
+console.log(codice);
 //genero aun array di oggeti con 100 oggetti giocatori basket
 var legaBasket = [];
 for (var i = 0; i <= 100; i++) {
