@@ -4,6 +4,24 @@ function numeroRandom(numeroMin, numeroMax){
   return numRandomRisultante;
 }
 
+//funzion generatore Codice
+var arrayLettere = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","u","v","w","x","y"];
+var arrayNumeri = [0,1,2,3,4,5,6,7,8,9];
+var arrayLettereLunghezza = arrayLettere.length - 1;
+var mischiaArray1 = (Math.round((Math.random()*arrayLettereLunghezza)+1))
+var mischiaArray2 = (Math.round((Math.random()*arrayLettereLunghezza)+1))
+var mischiaArray3 = (Math.round((Math.random()*arrayLettereLunghezza)+1))
+
+var codiceUnivoce = {
+    "Lettera1" : arrayLettere[mischiaArray1],
+    "Lettera2" : arrayLettere[mischiaArray2],
+    "Lettera3" : arrayLettere[mischiaArray3]
+}
+console.log(codiceUnivoce.Lettera1.toUpperCase() + codiceUnivoce.Lettera2.toUpperCase()  + codiceUnivoce.Lettera3.toUpperCase() );
+
+
+
+
 //genero aun array di oggeti con 100 oggetti giocatori basket
 var legaBasket = [];
 for (var i = 0; i <= 100; i++) {
