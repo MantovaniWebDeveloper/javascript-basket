@@ -44,22 +44,24 @@ for (var i = 0; i <= 100; i++) {
 
 console.log(legaBasket);
 
+for (var i = 0; i < legaBasket.length; i++) {
+  console.log(legaBasket[i].codiceUnivoco);
+}
+
 //TROVA CODICE
 var trovato = false;
 var i = 0;
 var codiceDaUtente = prompt("inserisci codice di ricerca");
 
-while (trovato == true || i < legaBasket.length) {
+for (var i = 0; i < legaBasket.length; i++) {
   codiceSalvato = legaBasket[i].codiceUnivoco;
   if (codiceSalvato == codiceDaUtente) {
+    console.log("Codice : " + legaBasket[i].codiceUnivoco);
     console.log("Punti realizzati : " + legaBasket[i].puntiRealizzati);
     console.log("Rimbalzi : " +legaBasket[i].rimbalzi);
     console.log("Falli : " +legaBasket[i].falli);
-    trovato = true;
   }
   else {
     console.log("codice insesitente");
-    trovato = false;
-    i++;
   }
 }
