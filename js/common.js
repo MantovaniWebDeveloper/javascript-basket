@@ -1,5 +1,48 @@
 /*FUNZIONE RANDOM DA UN NUMERO MINIMO AD UNO MASSIMO*/
 function numeroRandom(numeroMin, numeroMax){
-  var numRandomRisultante = Math.floor(Math.random() * (numeroMax - numeroMin + 1) - numeroMin);
+  var numRandomRisultante = Math.floor(Math.random() * (numeroMax - numeroMin + 1));
   return numRandomRisultante;
 }
+/*************************************/
+//funzione generatore Codice
+function generaCodice(arrayNumeri,arrayLettere){
+
+  var codiceToString = "";
+  var arrayCodice = [];
+  var arrayLettereLunghezza = arrayLettere.length - 1;
+  var arrayNumeriLunghezza = arrayNumeri.length - 1;
+
+  for (var i = 0; i < 3; i++) {
+    var mischiaArray = (Math.floor((Math.random()*arrayLettereLunghezza)+1));
+    arrayCodice.push(arrayLettere[mischiaArray])
+  }
+  for (var i = 0; i < 3; i++) {
+    var mischiaArrayNum = (Math.floor((Math.random()*arrayNumeriLunghezza)+1));
+    arrayCodice.push(arrayNumeri[mischiaArrayNum]);
+  }
+  codiceToString = arrayCodice.toString().toUpperCase().replace(/,/gi,"");
+
+  return codiceToString;
+}
+/*************************************/
+
+//funzione per verificare se l'utente inserisce un codice esistente
+
+function verificaCodice(array, inputUtente) {
+  var trovato = false;
+  for (var i = 0; i < array.length -1; i++) {
+    codiceSalvato = array[i].codiceUnivoco;
+    if (codiceSalvato == inputUtente) {
+      console.log("Codice : " + array[i].codiceUnivoco);
+      console.log("Punti realizzati : " + array[i].puntiRealizzati);
+      console.log("Rimbalzi : " + array[i].rimbalzi);
+      console.log("Falli : " + array[i].falli);
+      trovato = true;
+    }
+    else {
+      console.log("codice insesitente");
+    }
+  }
+  return trovato;
+}
+/*************************************/
