@@ -15,15 +15,12 @@ for (var i = 0; i <= 100; i++) {
   }
   legaBasket.push(nuovoGiocatore);
 }
-
 console.log(legaBasket);
-
 /*Questo ciclo solo per prendere uno dei codici generati*/
 for (var i = 0; i < legaBasket.length; i++) {
   console.log(legaBasket[i].codiceUnivoco);
 }
 /********************************************************/
-
 //TROVA CODICE
 var codiceDaUtente = prompt("inserisci codice di ricerca");
 var verCod = verificaCodice(legaBasket,codiceDaUtente);
