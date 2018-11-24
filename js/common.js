@@ -30,7 +30,8 @@ function generaCodice(arrayNumeri,arrayLettere){
 
 function verificaCodice(array, inputUtente) {
   var trovato = false;
-  for (var i = 0; i < array.length -1; i++) {
+  var i = 0;
+  while (!trovato) {
     codiceSalvato = array[i].codiceUnivoco;
     if (codiceSalvato == inputUtente) {
       console.log("Codice : " + array[i].codiceUnivoco);
@@ -46,8 +47,11 @@ function verificaCodice(array, inputUtente) {
     }
     else {
       console.log("codice insesitente");
-
+      document.getElementById('codiceUnivoco').innerHTML = "Codice non trovato..";
+      trovato = false;
+      i++;
     }
+
   }
   return trovato;
 }
