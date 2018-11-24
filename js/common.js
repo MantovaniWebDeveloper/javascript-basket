@@ -34,13 +34,20 @@ function verificaCodice(array, inputUtente) {
     codiceSalvato = array[i].codiceUnivoco;
     if (codiceSalvato == inputUtente) {
       console.log("Codice : " + array[i].codiceUnivoco);
+      document.getElementById('codiceUnivoco').innerHTML = array[i].codiceUnivoco;
       console.log("Punti realizzati : " + array[i].puntiRealizzati);
+      document.getElementById('puntiRealizzati').innerHTML = array[i].puntiRealizzati;
       console.log("Rimbalzi : " + array[i].rimbalzi);
+      document.getElementById('rimbalzi').innerHTML = array[i].rimbalzi;
       console.log("Falli : " + array[i].falli);
+      document.getElementById('falli').innerHTML = array[i].falli;
+
       trovato = true;
     }
     else {
       console.log("codice insesitente");
+      document.getElementById('codiceUnivoco').innerHTML = "Codice non trovato";
+
     }
   }
   return trovato;

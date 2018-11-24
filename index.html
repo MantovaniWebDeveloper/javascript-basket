@@ -2,11 +2,31 @@
 <html lang="it" dir="ltr">
   <head>
     <meta charset="utf-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css">
     <title>Basket by Dario Mantovani</title>
   </head>
   <body>
-
+    <div class="container">
+      <div class="wrapperScheda">
+        <table class="table">
+          <th>
+            <h1>Database giocatori Lega Basket</h1>
+            <h2 id="codiceUnivoco"></h2>
+          </th>
+          <tr>
+            <td>Punti realizzati</td>
+            <td>Rimbalzi</td>
+            <td>Falli</td>
+          </tr>
+          <tr class="success">
+            <td id="puntiRealizzati"></td>
+            <td id="rimbalzi"></td>
+            <td id="falli"></td>
+          </tr>
+        </table>
+      </div>
+    </div>
   <script src="js/common.js"></script>
   <script src="js/main.js"></script>
   </body>
