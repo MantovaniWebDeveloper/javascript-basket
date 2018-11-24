@@ -46,7 +46,6 @@ function verificaCodice(array, inputUtente) {
     }
     else {
       console.log("codice insesitente");
-      document.getElementById('codiceUnivoco').innerHTML = "Codice non trovato";
 
     }
   }
